@@ -5,14 +5,17 @@
         <title>The PIG Game</title>
         <link rel="stylesheet" type="text/css" href="style.css">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Lato:100,300,600">
+        <link rel="stylesheet" type="text/css" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
     </head>
 
     <body>
-        <div class="wrapper">
+        <div class="wrapper clearfix">
 
             <!-- Player 1 Panel Code -->
 
-            <div class="player-0-panel">
+            <div class="player-0-panel active">
+
                 <div class="player-name" id="name-0">Player 1</div>
                 <div class="player-score" id="score-0">0</div>
 
@@ -20,10 +23,11 @@
                 
                 <div class="player-round-score-box">
                     <div class="player-round-score-label">Round Score</div>
-                    <div class="player-round-score">0</div>
+                    <div class="player-round-score" id="current-0">0</div>
                 </div>
                 
                 <!-- Code Ends Here -->
+                
             </div>
 
             <!-- Player 1 Panel Code Ends Here -->
@@ -31,6 +35,7 @@
             <!-- Player 2 Panel Code -->
 
             <div class="player-1-panel">
+                
                 <div class="player-name" id="name-1">Player 2</div>
                 <div class="player-score" id="score-1">0</div>
             
@@ -38,7 +43,7 @@
                 
                 <div class="player-round-score-box">
                     <div class="player-round-score-label">Round Score</div>
-                    <div class="player-round-score">0</div>
+                    <div class="player-round-score" id="current-1">0</div>
                 </div>
 
                 <!-- Code Ends Here -->
@@ -48,13 +53,16 @@
 
             <!-- 'New Game', 'Roll Dice', 'Hold' Button Code -->
 
-            <button class="btn-new btn-primary">New Game</button>
-            <button class="btn-roll btn-success">Roll</button>
-            <button class="btn-hold btn-warning">Hold</button>
+            <button class="btn-new"><i class="ion-ios-plus-outline"></i>New Game</button>
+            <button class="btn-roll" id="roll-dice"><i class="ion-ios-loop"></i>Roll Dice</button>
+            <button class="btn-hold"><i class="ion-ios-download-outline"></i>Hold</button>
 
             <!-- Button Code Ends Here -->
 
-        </div>
-    </body>
+            <img src="..\assets\images\dice\dice-1.png" alt="Dice" class="dice">
 
+        </div>
+
+        <script src="app.js"></script>
+    </body>
 </html>
