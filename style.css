@@ -22,7 +22,8 @@
 }
 
 body {
-    background-image: linear-gradient(rgba(62, 20, 20, 0.4), rgba(62, 20, 20, 0.4));
+    background-image: linear-gradient(rgba(62, 20, 20, 0.4), rgba(62, 20, 20, 0.4)),
+    url("assets/images/background.jpg");
     background-size: cover;
     background-position: center;
     font-family: Lato;
@@ -34,14 +35,17 @@ body {
 
 .btn-new {
     top: 45px;
+    text-transform: uppercase;
 }
 
 .btn-roll {
     top: 403px;
+    text-transform: uppercase;
 }
 
 .btn-hold {
     top: 467px;
+    text-transform: uppercase;
 }
 
 button {

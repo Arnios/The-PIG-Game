@@ -86,7 +86,7 @@ document.querySelector('.btn-hold').addEventListener('click', function() {
 
     // 2. Check if the current player has crossed a score of 100, if so, then declare him as the winner in UI
 
-    if (score[activePlayer] >= 25) {
+    if (score[activePlayer] >= 100) {
 
         // Change current player's name tag to show 'Winner'
         document.getElementById('name-' + activePlayer).textContent = 'Winner';
