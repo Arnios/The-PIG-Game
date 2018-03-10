@@ -2,6 +2,10 @@ var score = [0, 0];     // Array to store the total score of individual players
 var roundScore = 0;     // Variable to store the current round score
 var activePlayer = 0;   // Variable to store the current active player
 
+document.querySelector('.btn-new').addEventListener('click', function() {
+    
+});
+
 document.querySelector('.btn-roll').addEventListener('click', function() {
 
     // Geneating a random number between 1 to 6 when the current player rolls the dice
@@ -51,19 +55,40 @@ document.querySelector('.btn-hold').addEventListener('click', function() {
     score[activePlayer] = score[activePlayer] + roundScore;
     document.getElementById('score-' + activePlayer).textContent = score[activePlayer];
 
-    // 2. Reset round score and show it in UI
+    // 2. Check if the current player has crossed a score of 100, if so, then declare him as the winner in UI
 
-    roundScore = 0;
-    document.getElementById('current-' + activePlayer).textContent = roundScore;
+    if (score[activePlayer] >= 100) {
 
-    // 3. Change active player and shift the active player panel
+        // Disable 'Roll Dice' button as the winner is already declared
+        document.getElementById('roll-dice').disabled = true;
 
-    if(activePlayer === 0)
-        activePlayer = 1;
-    else if(activePlayer === 1)
-        activePlayer = 0;
+        // Change current player's name tag to show 'Winner'
+        document.getElementById('name-' + activePlayer).textContent = 'Winner';
 
-    document.querySelector('.player-0-panel').classList.toggle('active');
-    document.querySelector('.player-1-panel').classList.toggle('active');
+        // Attach the 'winner' class to the winning player
+        document.querySelector('.player-' + activePlayer + '-panel').classList.add('winner');
+
+        // Remove the active panel, as the winner if found so the game will not go anymore
+        document.querySelector('player-0-panel').classList.remove('active');
+        document.querySelector('player-1-panel').classList.remove('active');
+
+    } else {
+
+        // 3. Reset round score and show it in UI
+
+        roundScore = 0;
+        document.getElementById('current-' + activePlayer).textContent = roundScore;
+
+        // 4. Change active player and shift the active player panel
+
+        if(activePlayer === 0)
+            activePlayer = 1;
+        else if(activePlayer === 1)
+            activePlayer = 0;
+
+        document.querySelector('.player-0-panel').classList.toggle('active');
+        document.querySelector('.player-1-panel').classList.toggle('active');
+
+    }
 
 });
