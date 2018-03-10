@@ -1,4 +1,4 @@
-# RULES
+# Game Rules
 
 - The game has 2 players, playing in turns
 - In each turn, a player rolls a dice as many times as he wishes and each result is added to his (or her) round score
